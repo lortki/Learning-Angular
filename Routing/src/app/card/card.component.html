@@ -1,0 +1,59 @@
+<div class="student-card">
+  <div class="student-card__header">
+    <h2 class="student-card__title">Student Details</h2>
+  </div>
+
+  <div class="student-card__content">
+    <div class="student-card__detail">
+      <span class="student-card__detail-label">Name</span>
+      <span class="student-card__detail-value">{{student.name}}</span>
+    </div>
+
+    <div class="student-card__detail">
+      <span class="student-card__detail-label">Age</span>
+      <span class="student-card__detail-value">{{student.age}}</span>
+    </div>
+
+    <div class="student-card__detail">
+      <span class="student-card__detail-label">Grade</span>
+      <span class="student-card__detail-value">{{student.grade}}</span>
+    </div>
+
+    <div class="student-card__detail">
+      <span class="student-card__detail-label">Subjects</span>
+      <span class="student-card__detail-value">{{student.subjects}}</span>
+    </div>
+
+    <div class="student-card__detail">
+      <span class="student-card__detail-label">Enrolled</span>
+      <span class="student-card__detail-value">{{student.isEnrolled ? 'Yes' : 'No'}}</span>
+    </div>
+
+    <div class="student-card__address">
+      <div class="student-card__detail">
+        <span class="student-card__detail-label">Street</span>
+        <span class="student-card__detail-value">{{student.address.street}}</span>
+      </div>
+
+      <div class="student-card__detail">
+        <span class="student-card__detail-label">City</span>
+        <span class="student-card__detail-value">{{student.address.city}}</span>
+      </div>
+
+      <div class="student-card__detail">
+        <span class="student-card__detail-label">Zip</span>
+        <span class="student-card__detail-value">{{student.address.zip}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-card__actions">
+    <button
+      (click)="deleteCard()"
+      >Remove Card</button>
+    <button
+        (click)="editCard()"
+      >Edit Card</button>
+  </div>
+</div>
+

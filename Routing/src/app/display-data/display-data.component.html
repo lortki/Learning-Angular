@@ -1,0 +1,8 @@
+<div *ngFor="let student of students; let index=index">
+  <app-card
+    [student]="student"
+    [index]="index"
+      (deleteEvent)="deleteCard($event)"
+      (editEvent)="editCard($event)"
+    ></app-card>
+</div>

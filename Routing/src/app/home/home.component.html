@@ -1,0 +1,79 @@
+<div class="enrollment-container">
+  <h1>Student Enrollment Form</h1>
+  <form class="enrollment-form">
+    <div class="form-section">
+      <h2>Personal Information</h2>
+
+      <div class="form-group">
+        <label for="name">Full Name<span class="required">*</span></label>
+        <input type="text" id="name" name="name" required
+        [(ngModel)]="student.name">
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age<span class="required">*</span></label>
+        <input type="number" id="age" name="age" min="5" max="25" required
+        [(ngModel)]="student.age">
+      </div>
+
+      <div class="form-group">
+        <label for="age">Grade<span class="required">*</span></label>
+        <input type="number" id="age" name="grade" required
+        [(ngModel)]="student.grade">
+      </div>
+
+      <div class="form-group">
+        <label for="age">Subjects<span class="required">*</span></label>
+        <input type="number" id="age" name="grade" required
+        [(ngModel)]="student.subjects">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Address Information</h2>
+
+      <div class="form-group">
+        <label for="street">Street Address<span class="required">*</span></label>
+        <input type="text" id="street" name="street" required
+        [(ngModel)]="student.address.street">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City<span class="required">*</span></label>
+        <input type="text" id="city" name="city" required
+        [(ngModel)]="student.address.city">
+      </div>
+
+      <div class="form-group">
+        <label for="zip">ZIP Code<span class="required">*</span></label>
+        <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="Five digit zip code" required
+        [(ngModel)]="student.address.zip">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Enrollment Status</h2>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="isEnrolled" name="isEnrolled"
+        [(ngModel)]="student.isEnrolled">
+        <label for="isEnrolled">Student is currently enrolled</label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-submit"
+                            (click)="addStudent()"
+        >Submit Enrollment</button>
+      <button type="reset" class="btn-reset"
+                           (click)="resetStudent()"
+        >Reset Form</button>
+    </div>
+  </form>
+</div>
+
+<app-display-data
+    [students]="students"
+    (deleteEvent)="deleteCard($event)"
+    (editEvent)="editCard($event)"
+    ></app-display-data>
