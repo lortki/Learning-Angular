@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Student } from '../../modes/student';
+import { Student } from '../../models/student';
 import { DisplayDataComponent } from '../display-data/display-data.component';
 import {FormsModule} from '@angular/forms';
 

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Student } from '../../modes/student';
+import { Student } from '../../models/student';
 import {CommonModule} from '@angular/common';
 import { CardComponent } from '../card/card.component';
 
