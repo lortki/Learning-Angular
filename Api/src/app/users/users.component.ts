@@ -15,9 +15,7 @@ import {RouterModule} from '@angular/router';
 
 export class UsersComponent {
 
-  constructor(
-    private api : UsersService
-  ){}
+  constructor(private api : UsersService){}
 
   users : User[] = []
 

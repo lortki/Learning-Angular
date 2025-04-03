@@ -7,15 +7,15 @@ import {ApiService} from '../api.service';
 export class UsersService {
 
   constructor(
-    private http : ApiService
+    private api : ApiService
   ) {}
 
   getUsers(){
-    return this.http.get("https://reqres.in/api/users")
+    return this.api.get("https://reqres.in/api/users")
   }
 
   getUser(id : number){
-    return this.http.get(`https://reqres.in/api/users/${id}`)
+    return this.api.get(`https://reqres.in/api/users/${id}`)
   }
 
 }
