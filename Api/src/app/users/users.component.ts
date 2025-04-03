@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import {Observable} from 'rxjs';
 import {User} from '../../models/user';
 import {UsersService} from '../../services/users/users.service';
@@ -15,14 +14,14 @@ import {RouterModule} from '@angular/router';
 
 export class UsersComponent {
 
-  constructor(private api : UsersService){}
+  constructor(private userService : UsersService){}
 
   users : User[] = []
 
   users$ ?: Observable<any>
 
   ngOnInit(){
-    this.users$ = this.api.getUsers()
+    this.users$ = this.userService.getUsers()
     this.users$.subscribe(resp => this.users = resp.data)
   }
 

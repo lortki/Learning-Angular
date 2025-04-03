@@ -15,7 +15,7 @@ export class UserComponent {
 
   constructor(
     private route : ActivatedRoute,
-    private users : UsersService
+    private UsersService : UsersService
   ){}
 
   id! : number
@@ -26,7 +26,7 @@ export class UserComponent {
   ngOnInit(){
     this.id = this.route.snapshot.params['id']
 
-    this.user$ = this.users.getUser(this.id)
+    this.user$ = this.UsersService.getUser(this.id)
 
     this.user$.subscribe(resp => this.user = resp.data)
   }
